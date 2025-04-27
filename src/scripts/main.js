@@ -2,12 +2,14 @@
 
 const inputs = document.querySelectorAll('input');
 
-for (let elem of inputs) {
+for (const elem of inputs) {
   const str = elem.getAttribute('name');
 
-  if (!str) continue;
+  if (!str) {
+    continue;
+  }
 
-  const namesPlaceholder = str[0].toUpperCase() + str.slice(1).toLowerCase();
+  const namesPlaceholder = str[0].toUpperCase() + str.slice(1);
   const label = document.createElement('label');
 
   const inputId = elem.id;
@@ -20,6 +22,4 @@ for (let elem of inputs) {
   elem.placeholder = namesPlaceholder;
   elem.before(label);
   label.classList.add('field-label');
-
 }
-
