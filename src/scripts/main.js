@@ -1,3 +1,25 @@
 'use strict';
 
-// write code here
+const inputs = document.querySelectorAll('input');
+
+for (let elem of inputs) {
+  const str = elem.getAttribute('name');
+
+  if (!str) continue;
+
+  const namesPlaceholder = str[0].toUpperCase() + str.slice(1).toLowerCase();
+  const label = document.createElement('label');
+
+  const inputId = elem.id;
+
+  if (inputId) {
+    label.setAttribute('for', inputId);
+  }
+
+  label.innerHTML = str.toUpperCase();
+  elem.placeholder = namesPlaceholder;
+  elem.before(label);
+  label.classList.add('field-label');
+
+}
+
