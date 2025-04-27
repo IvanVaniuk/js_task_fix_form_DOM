@@ -18,7 +18,7 @@ for (const elem of inputs) {
     label.setAttribute('for', inputId);
   }
 
-  label.innerHTML = str.toUpperCase();
+  label.innerHTML = str;
   elem.placeholder = namesPlaceholder;
   elem.before(label);
   label.classList.add('field-label');
